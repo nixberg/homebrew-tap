@@ -8,6 +8,18 @@ class Checkpass < Formula
     system "swift", "build",
         "--configuration", "release",
         "--disable-sandbox"
-    bin.install '.build/release/checkpass'
+    bin.install ".build/release/checkpass"
+    
+    generate_completion_script "bash", "checkpass.bash"
+    generate_completion_script "fish", "checkpass.fish"
+    generate_completion_script "zsh", "_checkpass"
+    
+    bash_completion.install "checkpass.bash"
+    fish_completion.install "checkpass.fish"
+    zsh_completion.install "_checkpass"
+  end
+  
+  def generate_completion_script (shell, file)
+    system "#{bin/"checkpass"} --generate-completion-script #{shell} > #{file}"
   end
 end
