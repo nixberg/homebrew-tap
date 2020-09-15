@@ -11,11 +11,12 @@ class Checkpass < Formula
     bin.install ".build/release/checkpass"
     
     generate_completion_script "bash", "checkpass.bash"
-    generate_completion_script "fish", "checkpass.fish"
-    generate_completion_script "zsh", "_checkpass"
-    
     bash_completion.install "checkpass.bash"
+    
+    generate_completion_script "fish", "checkpass.fish"
     fish_completion.install "checkpass.fish"
+    
+    generate_completion_script "zsh", "_checkpass"
     zsh_completion.install "_checkpass"
   end
   

@@ -8,14 +8,15 @@ class Genpass < Formula
     system "swift", "build",
         "--configuration", "release",
         "--disable-sandbox"
-    bin.install '.build/release/genpass'
+    bin.install ".build/release/genpass"
     
     generate_completion_script "bash", "genpass.bash"
-    generate_completion_script "fish", "genpass.fish"
-    generate_completion_script "zsh", "_genpass"
-    
     bash_completion.install "genpass.bash"
+    
+    generate_completion_script "fish", "genpass.fish"
     fish_completion.install "genpass.fish"
+    
+    generate_completion_script "zsh", "_genpass"
     zsh_completion.install "_genpass"
   end
   
