@@ -1,8 +1,8 @@
 class Genpass < Formula
-  desc "Simple, opinionated password generator"
+  desc "Simple password generator"
   homepage "https://github.com/nixberg/genpass-swift"
-  url "https://github.com/nixberg/genpass-swift/archive/0.4.0.tar.gz"
-  sha256 "42aaaf3ef0dbb0c0debf72656ad1fe9592ca40ba5100b493590ecb9ea516af29"
+  url "https://github.com/nixberg/genpass-swift/archive/0.5.0.tar.gz"
+  sha256 "06ce0e2322297a8b469597057835fde90b46e44ec234e1bf7eb6eba5b581839a"
   
   def install
     system "swift", "build",
