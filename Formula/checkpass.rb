@@ -1,8 +1,8 @@
 class Checkpass < Formula
   desc "Check passwords against the Pwned Passwords API"
   homepage "https://github.com/nixberg/checkpass-swift"
-  url "https://github.com/nixberg/checkpass-swift/archive/0.4.0.tar.gz"
-  sha256 "efff67e3e19ac1aea4302b6d57458d5548486f3b6eaa8ff960acd6d2bf674228"
+  url "https://github.com/nixberg/checkpass-swift/archive/0.5.0.tar.gz"
+  sha256 "649eea3e26214f87be7c9c187615fc4446444b5c8c16d236cb05da146b90240a"
   
   def install
     system "swift", "build",
