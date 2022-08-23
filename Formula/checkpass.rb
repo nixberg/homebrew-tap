@@ -7,6 +7,7 @@ class Checkpass < Formula
 
   def install
     system "swift", "build",
+        "--product", "checkpass",
         "--configuration", "release",
         "--disable-sandbox"
     bin.install ".build/release/checkpass"

@@ -7,6 +7,7 @@ class Genpass < Formula
 
   def install
     system "swift", "build",
+        "--product", "genpass",
         "--configuration", "release",
         "--disable-sandbox"
     bin.install ".build/release/genpass"
