@@ -3,7 +3,8 @@ class Checkpass < Formula
   homepage "https://github.com/nixberg/checkpass-swift"
   url "https://github.com/nixberg/checkpass-swift/archive/0.5.0.tar.gz"
   sha256 "649eea3e26214f87be7c9c187615fc4446444b5c8c16d236cb05da146b90240a"
-  
+  head "https://github.com/nixberg/checkpass-swift.git", branch: "main"
+
   def install
     system "swift", "build",
         "--configuration", "release",
