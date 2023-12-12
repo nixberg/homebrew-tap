@@ -1,28 +1,29 @@
 class Checkpass < Formula
   desc "Check passwords against the Pwned Passwords API"
   homepage "https://github.com/nixberg/checkpass-swift"
-  url "https://github.com/nixberg/checkpass-swift/archive/0.5.0.tar.gz"
-  sha256 "649eea3e26214f87be7c9c187615fc4446444b5c8c16d236cb05da146b90240a"
+  url "https://github.com/nixberg/checkpass-swift.git".
+      tag:      "0.5.0",
+      revision: "916cb46099bd4066673c72b7d1b4ff5d43f54854"
+  license "MIT"
   head "https://github.com/nixberg/checkpass-swift.git", branch: "main"
+
+  depends_on xcode: ["15.0", :build]
+  uses_from_macos "swift"
 
   def install
     system "swift", "build",
-        "--product", "checkpass",
         "--configuration", "release",
         "--disable-sandbox"
+        "--product", "checkpass",
     bin.install ".build/release/checkpass"
     
-    generate_completion_script "bash", "checkpass.bash"
+    system "#{bin/"checkpass"} --generate-completion-script bash > checkpass.bash"
     bash_completion.install "checkpass.bash"
     
-    generate_completion_script "fish", "checkpass.fish"
+    system "#{bin/"checkpass"} --generate-completion-script fish > checkpass.fish"
     fish_completion.install "checkpass.fish"
     
-    generate_completion_script "zsh", "_checkpass"
+    system "#{bin/"checkpass"} --generate-completion-script zsh > _checkpass"
     zsh_completion.install "_checkpass"
-  end
-  
-  def generate_completion_script (shell, file)
-    system "#{bin/"checkpass"} --generate-completion-script #{shell} > #{file}"
   end
 end
