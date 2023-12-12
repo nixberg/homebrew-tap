@@ -1,7 +1,7 @@
 class Checkpass < Formula
   desc "Check passwords against the Pwned Passwords API"
   homepage "https://github.com/nixberg/checkpass-swift"
-  url "https://github.com/nixberg/checkpass-swift.git".
+  url "https://github.com/nixberg/checkpass-swift.git",
       tag:      "0.5.0",
       revision: "916cb46099bd4066673c72b7d1b4ff5d43f54854"
   license "MIT"
@@ -13,8 +13,8 @@ class Checkpass < Formula
   def install
     system "swift", "build",
         "--configuration", "release",
-        "--disable-sandbox"
-        "--product", "checkpass",
+        "--disable-sandbox",
+        "--product", "checkpass"
     bin.install ".build/release/checkpass"
     
     system "#{bin/"checkpass"} --generate-completion-script bash > checkpass.bash"
