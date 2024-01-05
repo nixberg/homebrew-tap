@@ -12,18 +12,12 @@ class Checkpass < Formula
 
   def install
     system "swift", "build",
-        "--configuration", "release",
-        "--disable-sandbox",
-        "--product", "checkpass"
+           "--configuration", "release",
+           "--disable-sandbox",
+           "--product", "checkpass"
+
     bin.install ".build/release/checkpass"
-    
-    system "#{bin/"checkpass"} --generate-completion-script bash > checkpass.bash"
-    bash_completion.install "checkpass.bash"
-    
-    system "#{bin/"checkpass"} --generate-completion-script fish > checkpass.fish"
-    fish_completion.install "checkpass.fish"
-    
-    system "#{bin/"checkpass"} --generate-completion-script zsh > _checkpass"
-    zsh_completion.install "_checkpass"
+
+    generate_completions_from_executable bin/"checkpass", "--generate-completion-script"
   end
 end
