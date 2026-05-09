@@ -2,8 +2,8 @@ class Genpass < Formula
   desc "Simple password generator"
   homepage "https://github.com/nixberg/genpass-swift"
   url "https://github.com/nixberg/genpass-swift.git",
-      tag:      "0.10.0",
-      revision: "06b0f537ac94a832ebd23f260b2e4bf201935c0d"
+      tag:      "0.10.1",
+      revision: "883b9250027bbfecf2430aa68338eecf119bf28d"
   license "MIT"
   head "https://github.com/nixberg/genpass-swift.git", branch: "main"
 
